@@ -1,0 +1,26 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# Proxy all /api/* requests on Netlify directly to the centralized online cloud database server
+[[redirects]]
+  from = "/api/*"
+  to = "https://ais-pre-flooktj6sipkyyasuqfnty-408181072994.asia-east1.run.app/api/:splat"
+  status = 200
+  force = true
+
+# SPA fallback so Meta Ad product links (/product/* or /?product=*) always load properly
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  for = "/api/*"
+  [headers.values]
+    Cache-Control = "no-store, no-cache, must-revalidate, proxy-revalidate"
+    Pragma = "no-cache"
+    Expires = "0"
+    Access-Control-Allow-Origin = "*"
+    Access-Control-Allow-Methods = "GET, POST, PUT, PATCH, DELETE, OPTIONS"
+    Access-Control-Allow-Headers = "Content-Type, Authorization, Accept, Cache-Control, Pragma"

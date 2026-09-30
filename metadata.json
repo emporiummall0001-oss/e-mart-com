@@ -1,0 +1,6 @@
+{
+  "name": "E Mart Pakistan",
+  "description": "Premium online shopping store in Pakistan for Cosmetics, AirPods & Earbuds, Headphones, Tripods, and Smart Watches with Cash on Delivery and instant WhatsApp ordering.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
